@@ -93,6 +93,7 @@ A higher MRR indicates that relevant results appear earlier in the search output
 
 ## Running the code
 Each step can be maintained, debugged, or scaled independently, making the system suitable for iterative development or production deployment. Follow the steps below to set up and run the entire pipeline.
+Note: I used Python 3.12.7 to run the steps
 ### 1 Get raw Dataset
 1. Download the dataset from 
 
@@ -119,7 +120,7 @@ docker run -d --name elasticsearch \
   docker.elastic.co/elasticsearch/elasticsearch:8.12.0
 ```
 ### 4. Running the code
-To run each stage of the pipeline, simply use:
+To run each stage of the pipeline, simply run the following make commands one after the other. Note the product-search command will launch a gradio local webserver. Follow that link to start the product searching.
 ```bash
 make generate-dataset
 make build-vector-index
