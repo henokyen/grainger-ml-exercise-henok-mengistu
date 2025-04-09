@@ -1,0 +1,8 @@
+parameters:
+  data_dir: data/training/
+  train_data_name: 'train.csv'
+  embedding_model_id: sentence-transformers/multi-qa-mpnet-base-dot-v1
+  embedding_model_type: bert
+  embedding_model_dim: 348
+  index_name:  "products-hybrid-v1"
+  mapping_path: mapping/products-v1.json

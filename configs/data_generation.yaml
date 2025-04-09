@@ -1,0 +1,8 @@
+parameters:
+  data_dir: data/
+  output_dir_train: data/training/
+  output_dir_test: data/test/
+  train_data_name: 'train.csv'
+  test_data_name: 'test.csv'
+  max_rows: 500
+  unique_queires: 50

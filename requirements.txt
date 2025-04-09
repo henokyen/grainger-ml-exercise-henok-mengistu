@@ -1,0 +1,10 @@
+click
+pyyaml
+gradio
+pandas
+loguru
+beautifulsoup4
+elasticsearch
+langchain-huggingface
+langchain-openai
+sentence-transformers

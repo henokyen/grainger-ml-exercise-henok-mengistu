@@ -1,0 +1,28 @@
+{
+    "mappings": {
+        "properties": {
+            "product_description": {
+                "type": "dense_vector",
+                "dims": 768,
+                "index": true,
+                "similarity": "cosine"
+            },
+            "product_bullets": {
+                "type": "dense_vector",
+                "dims": 768,
+                "index": true,
+                "similarity": "cosine"
+            },
+            "product_title_embed": {
+                "type": "dense_vector",
+                "dims": 768,
+                "index": true,
+                "similarity": "cosine"
+            },
+            "product_color": { "type": "keyword" },
+            "product_brand": { "type": "keyword" },
+            "product_title_text": {"type": "text" },
+            "produc_id": {"type": "keyword"}
+        }
+    }
+}
