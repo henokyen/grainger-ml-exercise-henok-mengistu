@@ -34,11 +34,11 @@ The dataset used for this project consists of product listings and search querie
 - **`product_title`**: Often reflects the main keywords and product identity. This field typically captures what users are actually looking for (e.g., "wireless headphones").
 - **`product_brand`**: Important for brand-based queries such as "Nike shoes".
 - **`product_color`**: Useful for queries like "red dress" or "black sneakers".
-- **`product_bullet_point`**: May contain concise selling points and features, which can be useful in keyword-based matching.
+- **`product_bullet_point`**: May contain concise selling points and features, which can be useful in text-based matching.
 
 ###  Design Decision
 
-Although `product_description` contains rich information, it is often too verbose or include irrelevant details. After evaluating the fields, I chose `product_title` as the primary representation of the product's meaning or intent, as it most closely aligns with how users phrase their search queries.
+After evaluating the fields, I chose `product_title` as the primary representation of the product's meaning or intent, as it most closely aligns with how users phrase their search queries. However, to support experimentation and flexibitly I also embed and index `product_description` and `product_bullet_point`
 
 ### Hybrid Search Strategy
 
@@ -120,7 +120,7 @@ docker run -d --name elasticsearch \
   docker.elastic.co/elasticsearch/elasticsearch:8.12.0
 ```
 ### 4. Running the code
-To run each stage of the pipeline, simply run the following make commands one after the other. Note the product-search command will launch a gradio local webserver. Follow that link to start the product searching.
+To run each stage of the pipeline, simply run the following make commands one after the other. Note: the product-search command will launch a gradio local webserver. Follow that link to start the product searching.
 ```bash
 make generate-dataset
 make build-vector-index
