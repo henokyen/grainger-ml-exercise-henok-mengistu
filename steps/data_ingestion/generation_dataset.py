@@ -73,12 +73,6 @@ def get_data_from_disk(data_dir: Path,
         how='left'
     )
    
-#    all_pairs_df = pd.DataFrame(list(all_pairs), columns=['query_id', 'product_id'])
-#    all_df = all_pairs_df.merge(
-#         df_examples_products_train,
-#         on=['query_id', 'product_id'],
-#         how='left'
-#     )
    all_pair_dict = defaultdict(list)
    for key, value in all_pairs:
         all_pair_dict.setdefault(key, []).append(value)

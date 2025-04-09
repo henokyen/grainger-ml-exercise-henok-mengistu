@@ -2,8 +2,8 @@ from sentence_transformers import SentenceTransformer
 from elasticsearch import Elasticsearch
 from commons.embeddings import get_embedding_model
 
-KNOWN_COLORS = ["black", "brown", "blonde", "red", "white", "blue", "green", "gray"]
-KNOWN_BRANDS = ["L'Oréal", "Clairol", "Revlon", "Schwarzkopf", "Naturtint"]
+KNOWN_COLORS = ["black", "brown", "blonde", "red", "white", "blue", "green", "gray"] # some selected
+KNOWN_BRANDS = ["L'Oréal", "Clairol", "Revlon", "Schwarzkopf", "Naturtint"] # some selected
 
 def extract_color_and_brand(query):
     query_lower = query.lower()
@@ -54,7 +54,6 @@ def search(embedding_model_id: str,
            ) -> None:
     
     es = Elasticsearch("http://localhost:9200")
-    #model = SentenceTransformer("sentence-transformers/multi-qa-mpnet-base-dot-v1")
     embedding_model = get_embedding_model(embedding_model_id,embedding_model_type)
     query_vector = embedding_model.encode(user_query).tolist()
     elastic_search_query  = build_query(user_query, query_vector)

@@ -46,8 +46,6 @@ def evaluate_hitsN_MRR( data_dir: Path,
                         embedding_model_type: str,
                         index_name: str,
                        ):
-    # print('what is data dir', Path(data_dir))
-    # print(os.path.join(Path(data_dir),'test/test.csv'))
     test_df = pd.read_csv(os.path.join(data_dir,'test/test.csv'))
     with open(os.path.join(data_dir, 'all_pairs.json'), 'r') as f:
         all_pairs = json.load(f)

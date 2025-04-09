@@ -16,7 +16,7 @@ def clean_html(raw_html):
 
 # --- Normalize text (whitespace, casing, etc.) ---
 def normalize_text(text):
-    text = re.sub(r'\s+', ' ', text)  # collapse multiple spaces
+    text = re.sub(r'\s+', ' ', text)
     text = text.strip()
     return text
 

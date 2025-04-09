@@ -39,7 +39,6 @@ def build_multi_index(
     
     logger.info (f"Compute embeddings and inserting..")
 
-    # Index each lawyer's features into Elasticsearch
     for prod in product_data:
         prod_id = prod["product_id"]
         product_description_embedding = embedding_model.encode(prod["product_description"] if pd.notna(prod["product_description"]) else '').tolist()
